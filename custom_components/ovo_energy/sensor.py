@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from typing import Final
 
-from ovoenergy import OVOHalfHourlyUsage
+from ovoenergy import OVOHalfHourUsage
 from ovoenergy.ovoenergy import OVOEnergy
 
 from homeassistant.components.sensor import (
@@ -37,7 +37,7 @@ KEY_LAST_GAS_COST: Final = "last_gas_cost"
 class OVOEnergySensorEntityDescription(SensorEntityDescription):
     """Class describing System Bridge sensor entities."""
 
-    value: Callable[[OVOHalfHourlyUsage], StateType | datetime] = round
+    value: Callable[[OVOHalfHourUsage], StateType | datetime] = round
 
 
 SENSOR_TYPES_ELECTRICITY: tuple[OVOEnergySensorEntityDescription, ...] = (
@@ -172,5 +172,5 @@ class OVOEnergySensor(OVOEnergyDeviceEntity, SensorEntity):
     @property
     def native_value(self) -> StateType | datetime:
         """Return the state."""
-        usage: OVOHalfHourlyUsage = self.coordinator.data
+        usage: OVOHalfHourUsage = self.coordinator.data
         return self.entity_description.value(usage)
