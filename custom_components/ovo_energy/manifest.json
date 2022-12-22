@@ -1,11 +1,11 @@
 {
-  "domain": "ovo_energy",
-  "name": "OVO Energy",
+  "domain": "ovo_energy_half_hourly",
+  "name": "OVO Energy (Half Hourly)",
   "config_flow": true,
   "documentation": "https://www.github.com/charlienewey/ovo-half-hourly",
   "requirements": ["ovoenergy==1.2.0"],
   "codeowners": ["@charlienewey"],
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "loggers": ["ovoenergy"]
+  "loggers": ["ovoenergy_halfhourly"]
 }
