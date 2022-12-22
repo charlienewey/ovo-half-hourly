@@ -3,9 +3,11 @@
   "name": "OVO Energy (Half Hourly)",
   "config_flow": true,
   "documentation": "https://www.github.com/charlienewey/ovo-half-hourly",
+  "issue_tracker": "https://github.com/charlienewey/ovo-half-hourly/issues",
   "requirements": ["ovoenergy==1.2.0"],
   "codeowners": ["@charlienewey"],
   "integration_type": "service",
   "iot_class": "cloud_polling",
-  "loggers": ["ovoenergy_halfhourly"]
+  "loggers": ["ovoenergy_halfhourly"],
+  "version": "0.0.1"
 }
